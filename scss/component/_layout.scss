@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+#header {
+    width: 100%;
+    padding: 5vh 0;
+}
+
+.folder-icon {
+    width: 180px;
+    margin: auto;
+}
+
+#menu:hover {
+    position: relative;
+    max-width: 320px;
+    min-height: 300px;
+    margin: 0 auto;
+    z-index: 0;
+    .pop-icon{
+        display: block;
+        position: absolute;
+    }
+    #menu-news {
+        position: absolute;
+        top: 0px;
+        left: 145px;
+    }
+    #menu-style {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+    #menu-gallery {
+        position: absolute;
+        top: 140px;
+        right: 10px;
+    }
+    #menu-game {
+        position: absolute;
+        bottom: 30px;
+        right: 10px;
+    }
+    #menu-dashboard {
+        position: absolute;
+        bottom: 0px;
+        right: 145px;
+    }
+    #menu-directory {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+    }
+    #menu-linkedin {
+        position: absolute;
+        top: 140px;
+        left: 10px;
+    }
+    #menu-contact {
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+}
+
+.pop-icon {
+    display: none;
+    width: 30px;
+}
+
+#header-wrap:hover,
+#header-wrap:focus {
+    .pop-icon {
+        display: inline-block;
+    }
+}

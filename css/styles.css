@@ -337,4 +337,98 @@ template {
   display: none;
 }
 
+.g-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.folder-icon {
+  grid-column: 1/1;
+  place-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#header {
+  width: 100%;
+  padding: 5vh 0;
+}
+
+.folder-icon {
+  width: 180px;
+  margin: auto;
+}
+
+#menu:hover {
+  position: relative;
+  max-width: 320px;
+  min-height: 300px;
+  margin: 0 auto;
+  z-index: 0;
+}
+#menu:hover .pop-icon {
+  display: block;
+  position: absolute;
+}
+#menu:hover #menu-news {
+  position: absolute;
+  top: 0px;
+  left: 145px;
+}
+#menu:hover #menu-style {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+#menu:hover #menu-gallery {
+  position: absolute;
+  top: 140px;
+  right: 10px;
+}
+#menu:hover #menu-game {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+}
+#menu:hover #menu-dashboard {
+  position: absolute;
+  bottom: 0px;
+  right: 145px;
+}
+#menu:hover #menu-directory {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+#menu:hover #menu-linkedin {
+  position: absolute;
+  top: 140px;
+  left: 10px;
+}
+#menu:hover #menu-contact {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+.pop-icon {
+  display: none;
+  width: 30px;
+}
+
+#header-wrap:hover .pop-icon,
+#header-wrap:focus .pop-icon {
+  display: inline-block;
+}
+
+.primary-dark {
+  background-color: #001524;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
 /*# sourceMappingURL=styles.css.map */
