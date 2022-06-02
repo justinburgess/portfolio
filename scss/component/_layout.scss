@@ -22,46 +22,39 @@
 #menu:hover {
     z-index: 0;
     .pop-icon{
-        display: block;
+        visibility: visible;
     }
     #menu-news {
-        top: 0%;
-        right: 45%;
+        transform: translate(0, -140px) scale(1.2);
     }
     #menu-style {
-        top: 10%;
-        right: 10%;
+        transform: translate(100px, -110px) scale(1.2);
     }
     #menu-gallery {
-        top: 50%;
-        right: 0%;
+        transform: translate(130px, 0) scale(1.2);
     }
     #menu-game {
-        top: 85%;
-        right: 10%;
+        transform: translate(100px, 110px) scale(1.2);
     }
     #menu-dashboard {
-        top: 90%;
-        right: 45%;
+        transform: translate(0, 130px) scale(1.2);
     }
     #menu-directory {
-        top: 82%;
-        right: 80%;
+        transform: translate(-100px, 110px) scale(1.2);
     }
     #menu-linkedin {
-        top: 45%;
-        right: 85%;
+        transform: translate(-130px, 0) scale(1.2);
     }
     #menu-contact {
-        top: 10%;
-        right: 80%;
+        transform: translate(-100px, -110px) scale(1.2);
     }
 }
 
 .pop-icon {
-    // display: none;
+    visibility: hidden;
     position: absolute;
     width: 30px;
     top: 48%;
     right: 45%;
+    transition: all .5s;
 }

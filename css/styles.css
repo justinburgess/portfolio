@@ -372,46 +372,40 @@ template {
   z-index: 0;
 }
 #menu:hover .pop-icon {
-  display: block;
+  visibility: visible;
 }
 #menu:hover #menu-news {
-  top: 0%;
-  right: 45%;
+  transform: translate(0, -140px) scale(1.2);
 }
 #menu:hover #menu-style {
-  top: 10%;
-  right: 10%;
+  transform: translate(100px, -110px) scale(1.2);
 }
 #menu:hover #menu-gallery {
-  top: 50%;
-  right: 0%;
+  transform: translate(130px, 0) scale(1.2);
 }
 #menu:hover #menu-game {
-  top: 85%;
-  right: 10%;
+  transform: translate(100px, 110px) scale(1.2);
 }
 #menu:hover #menu-dashboard {
-  top: 90%;
-  right: 45%;
+  transform: translate(0, 130px) scale(1.2);
 }
 #menu:hover #menu-directory {
-  top: 82%;
-  right: 80%;
+  transform: translate(-100px, 110px) scale(1.2);
 }
 #menu:hover #menu-linkedin {
-  top: 45%;
-  right: 85%;
+  transform: translate(-130px, 0) scale(1.2);
 }
 #menu:hover #menu-contact {
-  top: 10%;
-  right: 80%;
+  transform: translate(-100px, -110px) scale(1.2);
 }
 
 .pop-icon {
+  visibility: hidden;
   position: absolute;
   width: 30px;
   top: 48%;
   right: 45%;
+  transition: all 0.5s;
 }
 
 .primary-dark {
