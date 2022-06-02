@@ -12,66 +12,56 @@
     margin: auto;
 }
 
-#menu:hover {
+#menu {
     position: relative;
     max-width: 320px;
     min-height: 300px;
     margin: 0 auto;
+}
+
+#menu:hover {
     z-index: 0;
     .pop-icon{
         display: block;
-        position: absolute;
     }
     #menu-news {
-        position: absolute;
-        top: 0px;
-        left: 145px;
+        top: 0%;
+        right: 45%;
     }
     #menu-style {
-        position: absolute;
-        top: 30px;
-        right: 20px;
+        top: 10%;
+        right: 10%;
     }
     #menu-gallery {
-        position: absolute;
-        top: 140px;
-        right: 10px;
+        top: 50%;
+        right: 0%;
     }
     #menu-game {
-        position: absolute;
-        bottom: 30px;
-        right: 10px;
+        top: 85%;
+        right: 10%;
     }
     #menu-dashboard {
-        position: absolute;
-        bottom: 0px;
-        right: 145px;
+        top: 90%;
+        right: 45%;
     }
     #menu-directory {
-        position: absolute;
-        bottom: 30px;
-        left: 20px;
+        top: 82%;
+        right: 80%;
     }
     #menu-linkedin {
-        position: absolute;
-        top: 140px;
-        left: 10px;
+        top: 45%;
+        right: 85%;
     }
     #menu-contact {
-        position: absolute;
-        top: 30px;
-        left: 20px;
+        top: 10%;
+        right: 80%;
     }
 }
 
 .pop-icon {
-    display: none;
+    // display: none;
+    position: absolute;
     width: 30px;
-}
-
-#header-wrap:hover,
-#header-wrap:focus {
-    .pop-icon {
-        display: inline-block;
-    }
+    top: 48%;
+    right: 45%;
 }
