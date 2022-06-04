@@ -1,3 +1,21 @@
 .primary-dark {
     background-color: $primaryDark;
 }
+
+.folder,
+.folder-front {
+    background-color: $primaryLight;
+    box-shadow: -7px -3px 8px 2px $primaryDarkPop; 
+}
+
+#tab-news {
+    background-color: $tabColor1;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    footer {
+        background-color: $primaryColorPop;
+        min-height: 5vh;
+    }
+}

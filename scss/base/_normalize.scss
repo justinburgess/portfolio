@@ -347,3 +347,25 @@
   [hidden] {
     display: none;
   }
+
+  /* Custom
+    ========================================================================== */
+
+  /**
+   * Remove default formatting from lists
+   */
+
+   ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+   }
+
+  /**
+   * Remove default formatting from anchors
+   */
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
