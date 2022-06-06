@@ -1,10 +1,9 @@
 body {
     display: grid;
-    grid-template-rows: .75fr minmax(0, 1.25fr) .25fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
     'header'
     'main'
-    'footer'
     ;
 
     header {
@@ -18,22 +17,26 @@ body {
     }
 }
 
+.main-overlay {
+    display: grid;
+    place-content: center;
+}
+
 .main-wrap {
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
 }
 
-#header {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-}
-
 @media (min-width: 768px){
 
     body {
-        grid-template-rows: 4.5fr 5fr .5fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        'header' 
+        'main' 
+        'footer'
+        ;
     }
 
     #menu {
@@ -50,7 +53,7 @@ body {
         #icons {
             grid-area: icons;
             display: grid;
-            place-content: center;
+            justify-content: space-between;
             grid-template-columns: repeat(6, 1fr);
             grid-template-areas: 'news style gallery game dashboard directory';
         }
@@ -86,7 +89,14 @@ body {
     }
 
     .main-wrap {
+        display: grid !important;
         grid-template-columns: repeat(2, minmax(320px, 1fr));
+    }
+
+    footer {
+        display: grid !important; 
+        grid-template-columns: 1fr 1fr 1fr;
+        place-content: center;
     }
 }
 
@@ -99,11 +109,21 @@ body {
     }
 
     #header {
+        display: grid;
         grid-area: header;
+        grid-template-columns: 1fr;
+        justify-content: center;
         text-align: center;
     }
-
-    #icons {
-        display: inline-block;
+    #menu {
+        display: block;
+        #icons {
+            gap: 5px 20px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+            'news style gallery' 
+            'game dashboard directory'
+            ;
+        }
     }
 }

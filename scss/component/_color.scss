@@ -6,6 +6,13 @@
     color: $primaryColorPop;
 }
 
+.main-overlay {
+    background-color: $primaryColorPop;
+    img {
+        box-shadow: none;
+    }
+}
+
 .folder,
 .folder-front {
     background-color: $primaryLight;
@@ -53,13 +60,26 @@ img {
     color: white;
 }
 
+.footer-icon img {
+    box-shadow: none;
+}
+
 @media (min-width: 768px) {
+    body {
+        background-color: lighten($primaryColor, 65%);
+    }
+
     header {
         background: center / cover no-repeat url('../img/triangles.png') $primaryDark;
         background-blend-mode: soft-light;
     }
 
     footer {
-        background-color: $primaryColorPop;
+        background-color: $primaryColor;
+    }
+
+    .main-wrap {
+        background: center / cover no-repeat url('../img/brick-background.jpg') $primaryColorPop;
+        background-blend-mode: soft-light;
     }
 }

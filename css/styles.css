@@ -356,6 +356,120 @@ a {
   color: inherit;
 }
 
+body {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "header" "main";
+}
+body header {
+  grid-area: header;
+}
+body main {
+  grid-area: main;
+}
+body footer {
+  grid-area: footer;
+}
+
+.main-overlay {
+  display: grid;
+  place-content: center;
+}
+
+.main-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+@media (min-width: 768px) {
+  body {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "header" "main" "footer";
+  }
+
+  #menu {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "folder" "icons";
+  }
+  #menu .folder-icon {
+    grid-area: folder;
+  }
+  #menu #icons {
+    grid-area: icons;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "news style gallery game dashboard directory";
+  }
+  #menu #menu-news {
+    grid-area: news;
+  }
+  #menu #menu-style {
+    grid-area: style;
+  }
+  #menu #menu-gallery {
+    grid-area: gallery;
+  }
+  #menu #menu-game {
+    grid-area: game;
+  }
+  #menu #menu-dashboard {
+    grid-area: dashboard;
+  }
+  #menu #menu-directory {
+    grid-area: directory;
+  }
+  #menu .pop-icon {
+    opacity: 1;
+  }
+
+  .folder-icon {
+    place-self: center;
+  }
+
+  .pop-icon {
+    place-self: center;
+  }
+
+  .main-wrap {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+
+  footer {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  #header-wrap {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "heading folder" "icons";
+    place-content: center;
+  }
+
+  #header {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #menu {
+    display: block;
+  }
+  #menu #icons {
+    gap: 5px 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "news style gallery" "game dashboard directory";
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -431,12 +545,25 @@ body {
   right: 45%;
   transition: all 0.5s;
 }
+.pop-icon svg:hover {
+  transform: scale(1.2);
+}
 
 main {
   height: 100%;
 }
 
+.main-overlay {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.main-overlay svg {
+  width: 200px;
+}
+
 .main-wrap {
+  display: none;
   padding: 3rem;
 }
 
@@ -449,7 +576,7 @@ main {
   top: 5px;
   left: 7px;
   z-index: 2;
-  border: 1px solid rgba(120, 41, 15, 0.4666666667);
+  border: 1px solid rgba(120, 41, 15, 0.631372549);
   border-radius: 3% 2% 2% 0%/2% 2% 79% 40%;
   transform-origin: bottom;
   transition: all 0.8s ease-in-out;
@@ -469,7 +596,7 @@ main {
   margin: 1rem auto;
   padding: 1rem;
   max-width: 400px;
-  border: 1px solid rgba(120, 41, 15, 0.4666666667);
+  border: 1px solid rgba(120, 41, 15, 0.631372549);
   border-radius: 3% 2% 0% 2%/2% 2% 79% 40%;
   text-align: center;
   transform: rotateY(2deg);
@@ -493,8 +620,13 @@ p {
   text-align: center;
 }
 
+.footer-icon {
+  display: none;
+}
+
 footer {
   display: none;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -527,6 +659,7 @@ footer {
   }
 
   #menu {
+    padding: 1rem;
     max-width: 90%;
     min-height: 95%;
   }
@@ -534,6 +667,10 @@ footer {
   .folder-icon,
 .pop-icon {
     position: static;
+  }
+
+  .main-overlay {
+    display: none;
   }
 
   .main-wrap,
@@ -544,11 +681,22 @@ footer {
   }
 
   footer {
-    display: inline-block;
     margin: auto;
     width: 100%;
-    min-height: 5vh;
+    height: 100%;
+    min-height: 7vh;
     max-width: 1024px;
+  }
+  footer .footer-icon {
+    display: block;
+    text-align: center;
+  }
+  footer img {
+    width: 30px;
+    box-shadow: none;
+  }
+  footer img:hover {
+    transform: scale(1.2);
   }
 }
 @media (min-width: 1024px) {
@@ -560,139 +708,16 @@ footer {
     display: none;
   }
 
-  .icons {
-    display: block;
-  }
-
-  #menu-news {
-    transform: translate(0, 0);
-  }
-
-  #menu-style {
-    transform: translate(0, 0);
-  }
-
-  #menu-gallery {
-    transform: translate(0, 0);
-  }
-
-  #menu-game {
-    transform: translate(0, 0);
-  }
-
-  #menu-dashboard {
-    transform: translate(0, 0);
-  }
-
-  #menu-directory {
-    transform: translate(0, 0);
-  }
-
-  #menu-linkedin {
-    transform: translate(0, 0);
-  }
-
-  #menu-contact {
-    transform: translate(0, 0);
-  }
-}
-body {
-  display: grid;
-  grid-template-rows: 0.75fr minmax(0, 1.25fr) 0.25fr;
-  grid-template-areas: "header" "main" "footer";
-}
-body header {
-  grid-area: header;
-}
-body main {
-  grid-area: main;
-}
-body footer {
-  grid-area: footer;
-}
-
-.main-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
-}
-
-#header {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  body {
-    grid-template-rows: 4.5fr 5fr 0.5fr;
-  }
-
   #menu {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr;
-    grid-template-areas: "folder" "icons";
-  }
-  #menu .folder-icon {
-    grid-area: folder;
-  }
-  #menu #icons {
-    grid-area: icons;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "news style gallery game dashboard directory";
-  }
-  #menu #menu-news {
-    grid-area: news;
-  }
-  #menu #menu-style {
-    grid-area: style;
-  }
-  #menu #menu-gallery {
-    grid-area: gallery;
-  }
-  #menu #menu-game {
-    grid-area: game;
-  }
-  #menu #menu-dashboard {
-    grid-area: dashboard;
-  }
-  #menu #menu-directory {
-    grid-area: directory;
-  }
-  #menu .pop-icon {
-    opacity: 1;
-  }
-
-  .folder-icon {
-    place-self: center;
-  }
-
-  .pop-icon {
-    place-self: center;
-  }
-
-  .main-wrap {
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
-  }
-}
-@media (min-width: 1024px) {
-  #header-wrap {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "heading folder" "icons";
-    place-content: center;
-  }
-
-  #header {
-    grid-area: header;
-    text-align: center;
+    position: relative;
+    padding: 0;
   }
 
   #icons {
-    display: inline-block;
+    position: absolute;
+    gap: 6px;
+    top: 60px;
+    left: 25px;
   }
 }
 .primary-dark {
@@ -703,10 +728,17 @@ body footer {
   color: #FF7D00;
 }
 
+.main-overlay {
+  background-color: #FF7D00;
+}
+.main-overlay img {
+  box-shadow: none;
+}
+
 .folder,
 .folder-front {
   background-color: #FFECD1;
-  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.4666666667);
+  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.631372549);
 }
 
 .frame {
@@ -714,7 +746,7 @@ body footer {
 }
 
 img {
-  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.4666666667);
+  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.631372549);
 }
 
 #tab-news {
@@ -750,14 +782,27 @@ img {
   color: white;
 }
 
+.footer-icon img {
+  box-shadow: none;
+}
+
 @media (min-width: 768px) {
+  body {
+    background-color: rgba(214, 243, 247, 0.5568627451);
+  }
+
   header {
     background: center/cover no-repeat url("../img/triangles.png") #001524;
     background-blend-mode: soft-light;
   }
 
   footer {
-    background-color: #FF7D00;
+    background-color: rgba(21, 97, 109, 0.5568627451);
+  }
+
+  .main-wrap {
+    background: center/cover no-repeat url("../img/brick-background.jpg") #FF7D00;
+    background-blend-mode: soft-light;
   }
 }
 body {

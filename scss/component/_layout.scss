@@ -73,13 +73,26 @@ body {
     top: 48%;
     right: 45%;
     transition: all .5s;
+    & svg:hover {
+        transform: scale(1.2);
+    }
 }
 
 main {
     height: 100%;
 }
 
+.main-overlay {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    svg {
+        width: 200px;
+    }
+}
+
 .main-wrap {
+    display: none;
     padding: 3rem;
 }
 
@@ -138,8 +151,13 @@ p {
     text-align: center;
 }
 
+.footer-icon {
+    display: none;
+}
+
 footer {
     display: none;
+    height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -171,12 +189,16 @@ footer {
         display: none;
     }
     #menu {
+        padding: 1rem;
         max-width: 90%;
         min-height: 95%;
     }
     .folder-icon,
     .pop-icon {
         position: static;
+    }
+    .main-overlay {
+        display: none;
     }
     .main-wrap,
     #header,
@@ -185,11 +207,23 @@ footer {
         margin: 0 auto;
     }
     footer {
-        display: inline-block;
         margin: auto;
         width: 100%;
-        min-height: 5vh;
+        height: 100%;
+        min-height: 7vh;
         max-width: 1024px;
+        .footer-icon {
+            display: block;
+            text-align: center;
+        }
+        img {
+            width: 30px;
+            box-shadow: none;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
     }
 }
 
@@ -200,31 +234,15 @@ footer {
     .icon-text {
         display: none;
     }
-    .icons {
-        display: block;
+    #menu {
+        position: relative;
+        padding: 0;
     }
-    #menu-news {
-        transform: translate(0, 0);
-    }
-    #menu-style {
-        transform: translate(0, 0);
-    }
-    #menu-gallery {
-        transform: translate(0, 0);
-    }
-    #menu-game {
-        transform: translate(0, 0);
-    }
-    #menu-dashboard {
-        transform: translate(0, 0);
-    }
-    #menu-directory {
-        transform: translate(0, 0);
-    }
-    #menu-linkedin {
-        transform: translate(0, 0);
-    }
-    #menu-contact {
-        transform: translate(0, 0);
+    #icons {
+        // display: block;
+        position: absolute;
+        gap: 6px;
+        top: 60px;
+        left: 25px;
     }
 }
