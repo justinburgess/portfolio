@@ -1,6 +1,6 @@
 body {
     display: grid;
-    grid-template-rows: 1fr minmax(0, 1fr);
+    grid-template-rows: .75fr minmax(0, 1.25fr) .25fr;
     grid-template-areas:
     'header'
     'main'
@@ -16,6 +16,12 @@ body {
     footer {
         grid-area: footer;
     }
+}
+
+.main-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
 }
 
 #header {
@@ -77,5 +83,27 @@ body {
 
     .pop-icon {
         place-self: center;
+    }
+
+    .main-wrap {
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    #header-wrap {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 'heading folder' 'icons' ;
+        place-content: center;
+    }
+
+    #header {
+        grid-area: header;
+        text-align: center;
+    }
+
+    #icons {
+        display: inline-block;
     }
 }

@@ -2,20 +2,64 @@
     background-color: $primaryDark;
 }
 
+#heading {
+    color: $primaryColorPop;
+}
+
 .folder,
 .folder-front {
     background-color: $primaryLight;
     box-shadow: -7px -3px 8px 2px $primaryDarkPop; 
 }
 
+.frame {
+    background-color: white;
+}
+
+img {
+    box-shadow: -7px -3px 8px 2px $primaryDarkPop;
+}
+
 #tab-news {
     background-color: $tabColor1;
+}
+
+#tab-style {
+    background-color: $tabColor2;
+}
+
+#tab-gallery {
+    background-color: $tabColor3;
+}
+
+#tab-game {
+    background-color: $tabColor4;
+}
+
+#tab-dashboard {
+    background-color: $tabColor5;
+}
+
+#tab-directory {
+    background-color: $tabColor6;
+}
+
+#tab-news,
+#tab-style,
+#tab-gallery,
+#tab-game,
+#tab-dashboard,
+#tab-directory {
     color: white;
 }
 
 @media (min-width: 768px) {
+    header {
+        background: center / cover no-repeat url('../img/triangles.png') $primaryDark;
+        background-blend-mode: soft-light;
+    }
+
     footer {
         background-color: $primaryColorPop;
-        min-height: 5vh;
     }
 }

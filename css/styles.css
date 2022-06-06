@@ -356,80 +356,14 @@ a {
   color: inherit;
 }
 
-body {
-  display: grid;
-  grid-template-rows: 1fr minmax(0, 1fr);
-  grid-template-areas: "header" "main" "footer";
-}
-body header {
-  grid-area: header;
-}
-body main {
-  grid-area: main;
-}
-body footer {
-  grid-area: footer;
-}
-
-#header {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-}
-
-@media (min-width: 768px) {
-  body {
-    grid-template-rows: 4.5fr 5fr 0.5fr;
-  }
-
-  #menu {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr;
-    grid-template-areas: "folder" "icons";
-  }
-  #menu .folder-icon {
-    grid-area: folder;
-  }
-  #menu #icons {
-    grid-area: icons;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "news style gallery game dashboard directory";
-  }
-  #menu #menu-news {
-    grid-area: news;
-  }
-  #menu #menu-style {
-    grid-area: style;
-  }
-  #menu #menu-gallery {
-    grid-area: gallery;
-  }
-  #menu #menu-game {
-    grid-area: game;
-  }
-  #menu #menu-dashboard {
-    grid-area: dashboard;
-  }
-  #menu #menu-directory {
-    grid-area: directory;
-  }
-  #menu .pop-icon {
-    opacity: 1;
-  }
-
-  .folder-icon {
-    place-self: center;
-  }
-
-  .pop-icon {
-    place-self: center;
-  }
-}
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -439,6 +373,10 @@ body {
 #header {
   width: 100%;
   padding: 5vh 0;
+}
+
+#heading {
+  display: none;
 }
 
 .folder-icon {
@@ -499,11 +437,6 @@ main {
 }
 
 .main-wrap {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  height: 100%;
-  text-align: center;
   padding: 3rem;
 }
 
@@ -519,18 +452,14 @@ main {
   border: 1px solid rgba(120, 41, 15, 0.4666666667);
   border-radius: 3% 2% 2% 0%/2% 2% 79% 40%;
   transform-origin: bottom;
-  transition: all 0.5s;
-  overflow: auto;
-}
-.folder-front:hover {
-  transform: rotateX(95deg) skewX(-25deg);
+  transition: all 0.8s ease-in-out;
 }
 
 .folder-tab {
   display: block;
   position: absolute;
   padding: 0.6rem;
-  top: -4rem;
+  top: -3rem;
   border-radius: 51% 50% 0% 0%/25% 29% 28% 32%;
   text-align: left;
 }
@@ -542,6 +471,17 @@ main {
   max-width: 400px;
   border: 1px solid rgba(120, 41, 15, 0.4666666667);
   border-radius: 3% 2% 0% 2%/2% 2% 79% 40%;
+  text-align: center;
+  transform: rotateY(2deg);
+}
+.folder:hover .folder-front {
+  transform: rotateX(95deg) skewX(-25deg);
+}
+
+.frame {
+  padding: 1rem;
+  border: 5px dashed #84BCDA;
+  border-radius: 5px;
 }
 
 img {
@@ -596,12 +536,171 @@ footer {
     position: static;
   }
 
+  .main-wrap,
+#header,
+#header-wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
   footer {
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    min-height: 5vh;
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1024px) {
+  #heading {
+    display: inline-block;
+  }
+
+  .icon-text {
+    display: none;
+  }
+
+  .icons {
     display: block;
+  }
+
+  #menu-news {
+    transform: translate(0, 0);
+  }
+
+  #menu-style {
+    transform: translate(0, 0);
+  }
+
+  #menu-gallery {
+    transform: translate(0, 0);
+  }
+
+  #menu-game {
+    transform: translate(0, 0);
+  }
+
+  #menu-dashboard {
+    transform: translate(0, 0);
+  }
+
+  #menu-directory {
+    transform: translate(0, 0);
+  }
+
+  #menu-linkedin {
+    transform: translate(0, 0);
+  }
+
+  #menu-contact {
+    transform: translate(0, 0);
+  }
+}
+body {
+  display: grid;
+  grid-template-rows: 0.75fr minmax(0, 1.25fr) 0.25fr;
+  grid-template-areas: "header" "main" "footer";
+}
+body header {
+  grid-area: header;
+}
+body main {
+  grid-area: main;
+}
+body footer {
+  grid-area: footer;
+}
+
+.main-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  body {
+    grid-template-rows: 4.5fr 5fr 0.5fr;
+  }
+
+  #menu {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "folder" "icons";
+  }
+  #menu .folder-icon {
+    grid-area: folder;
+  }
+  #menu #icons {
+    grid-area: icons;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "news style gallery game dashboard directory";
+  }
+  #menu #menu-news {
+    grid-area: news;
+  }
+  #menu #menu-style {
+    grid-area: style;
+  }
+  #menu #menu-gallery {
+    grid-area: gallery;
+  }
+  #menu #menu-game {
+    grid-area: game;
+  }
+  #menu #menu-dashboard {
+    grid-area: dashboard;
+  }
+  #menu #menu-directory {
+    grid-area: directory;
+  }
+  #menu .pop-icon {
+    opacity: 1;
+  }
+
+  .folder-icon {
+    place-self: center;
+  }
+
+  .pop-icon {
+    place-self: center;
+  }
+
+  .main-wrap {
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  #header-wrap {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "heading folder" "icons";
+    place-content: center;
+  }
+
+  #header {
+    grid-area: header;
+    text-align: center;
+  }
+
+  #icons {
+    display: inline-block;
   }
 }
 .primary-dark {
   background-color: #001524;
+}
+
+#heading {
+  color: #FF7D00;
 }
 
 .folder,
@@ -610,19 +709,67 @@ footer {
   box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.4666666667);
 }
 
+.frame {
+  background-color: white;
+}
+
+img {
+  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.4666666667);
+}
+
 #tab-news {
   background-color: #067BC2;
+}
+
+#tab-style {
+  background-color: #84BCDA;
+}
+
+#tab-gallery {
+  background-color: #ECC30B;
+}
+
+#tab-game {
+  background-color: #F37748;
+}
+
+#tab-dashboard {
+  background-color: #D56062;
+}
+
+#tab-directory {
+  background-color: #9ede96;
+}
+
+#tab-news,
+#tab-style,
+#tab-gallery,
+#tab-game,
+#tab-dashboard,
+#tab-directory {
   color: white;
 }
 
 @media (min-width: 768px) {
+  header {
+    background: center/cover no-repeat url("../img/triangles.png") #001524;
+    background-blend-mode: soft-light;
+  }
+
   footer {
     background-color: #FF7D00;
-    min-height: 5vh;
   }
 }
 body {
   font-family: "Nunito", sans-serif;
+}
+
+#heading {
+  font-size: 80px;
+}
+
+.folder-tab {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=styles.css.map */
