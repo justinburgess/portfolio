@@ -58,10 +58,10 @@ body {
     #menu-directory {
         transform: translate(-100px, 110px) scale(1.5);
     }
-    #menu-linkedin {
+    #menu-responsive {
         transform: translate(-130px, 0) scale(1.5);
     }
-    #menu-contact {
+    #menu-folders {
         transform: translate(-100px, -110px) scale(1.5);
     }
 }
@@ -88,6 +88,11 @@ main {
     text-align: center;
     svg {
         width: 200px;
+    }
+    #linkedin-overlay,
+    #contact-overlay {
+        width: 40px;
+        text-align: center;
     }
 }
 
@@ -166,15 +171,8 @@ footer {
     }
 
     #menu:hover {
-        #menu-news,
-        #menu-style,
-        #menu-gallery,
-        #menu-game,
-        #menu-dashboard,
-        #menu-directory,
-        #menu-linkedin,
-        #menu-contact  {
-            transform: none;
+        .pop-icon  {
+            transform: none !important;
         }
         
     }
@@ -234,6 +232,9 @@ footer {
     #heading {
         display: inline-block;
     }
+    .folder-icon {
+        width: 220px;
+    }
     .icon-text {
         display: none;
     }
@@ -245,7 +246,7 @@ footer {
         // display: block;
         position: absolute;
         gap: 6px;
-        top: 60px;
-        left: 25px;
+        top: 80px;
+        left: 22px;
     }
 }

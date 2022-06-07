@@ -50,12 +50,15 @@
     background-color: $tabColor6;
 }
 
-#tab-news,
-#tab-style,
-#tab-gallery,
-#tab-game,
-#tab-dashboard,
-#tab-directory {
+#tab-responsive {
+    background-color: lighten($tabColor7, 20%);
+}
+
+#tab-folders {
+    background-color: darken($primaryLight, 25%);
+}
+
+.folder-tab {
     color: white;
 }
 

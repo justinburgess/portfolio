@@ -373,7 +373,19 @@ body footer {
 
 .main-overlay {
   display: grid;
-  place-content: center;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "github github" "linkedin contact";
+}
+.main-overlay #github-overlay {
+  grid-area: github;
+  padding-top: 50px;
+}
+.main-overlay #linkedin-overlay {
+  grid-area: linkedin;
+}
+.main-overlay #contact-overlay {
+  grid-area: contact;
 }
 
 .main-wrap {
@@ -401,8 +413,8 @@ body footer {
     grid-area: icons;
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "news style gallery game dashboard directory";
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "news style gallery game dashboard directory responsive folders";
   }
   #menu #menu-news {
     grid-area: news;
@@ -421,6 +433,12 @@ body footer {
   }
   #menu #menu-directory {
     grid-area: directory;
+  }
+  #menu #menu-responsive {
+    grid-area: responsive;
+  }
+  #menu #menu-folders {
+    grid-area: folders;
   }
   #menu .pop-icon {
     opacity: 1;
@@ -467,7 +485,7 @@ body footer {
   #menu #icons {
     gap: 5px 5px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "news style gallery" "game dashboard directory";
+    grid-template-areas: "news style gallery folders" "game dashboard directory responsive";
   }
 }
 * {
@@ -530,10 +548,10 @@ body {
 #menu:hover #menu-directory {
   transform: translate(-100px, 110px) scale(1.5);
 }
-#menu:hover #menu-linkedin {
+#menu:hover #menu-responsive {
   transform: translate(-130px, 0) scale(1.5);
 }
-#menu:hover #menu-contact {
+#menu:hover #menu-folders {
   transform: translate(-100px, -110px) scale(1.5);
 }
 
@@ -560,6 +578,11 @@ main {
 }
 .main-overlay svg {
   width: 200px;
+}
+.main-overlay #linkedin-overlay,
+.main-overlay #contact-overlay {
+  width: 40px;
+  text-align: center;
 }
 
 .main-wrap {
@@ -634,15 +657,8 @@ footer {
     padding: 0;
   }
 
-  #menu:hover #menu-news,
-#menu:hover #menu-style,
-#menu:hover #menu-gallery,
-#menu:hover #menu-game,
-#menu:hover #menu-dashboard,
-#menu:hover #menu-directory,
-#menu:hover #menu-linkedin,
-#menu:hover #menu-contact {
-    transform: none;
+  #menu:hover .pop-icon {
+    transform: none !important;
   }
 
   .folder-icon {
@@ -708,6 +724,10 @@ footer {
     display: inline-block;
   }
 
+  .folder-icon {
+    width: 220px;
+  }
+
   .icon-text {
     display: none;
   }
@@ -720,8 +740,8 @@ footer {
   #icons {
     position: absolute;
     gap: 6px;
-    top: 60px;
-    left: 25px;
+    top: 80px;
+    left: 22px;
   }
 }
 .primary-dark {
@@ -777,12 +797,15 @@ footer {
   background-color: #9ede96;
 }
 
-#tab-news,
-#tab-style,
-#tab-gallery,
-#tab-game,
-#tab-dashboard,
-#tab-directory {
+#tab-responsive {
+  background-color: #25adc3;
+}
+
+#tab-folders {
+  background-color: #ffb752;
+}
+
+.folder-tab {
   color: white;
 }
 
