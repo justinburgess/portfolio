@@ -16,15 +16,14 @@
 .folder,
 .folder-front {
     background-color: $primaryLight;
-    box-shadow: -7px -3px 8px 2px $primaryDarkPop; 
+    box-shadow: -7px -3px 8px 2px $primaryDarkPop;
+    & img {
+        box-shadow: -7px -3px 8px 2px $primaryDarkPop;
+    }
 }
 
 .frame {
     background-color: white;
-}
-
-img {
-    box-shadow: -7px -3px 8px 2px $primaryDarkPop;
 }
 
 #tab-news {
@@ -79,7 +78,7 @@ img {
     }
 
     .main-wrap {
-        background: center / cover no-repeat url('../img/brick-background.jpg') $primaryColorPop;
+        background: center / cover no-repeat url('../img/brick-background.jpg') lighten($primaryColorPop, 25%);
         background-blend-mode: soft-light;
     }
 }

@@ -41,28 +41,28 @@ body {
         opacity: 1;
     }
     #menu-news {
-        transform: translate(0, -140px) scale(1.2);
+        transform: translate(0, -140px) scale(1.5);
     }
     #menu-style {
-        transform: translate(100px, -110px) scale(1.2);
+        transform: translate(100px, -110px) scale(1.5);
     }
     #menu-gallery {
-        transform: translate(130px, 0) scale(1.2);
+        transform: translate(130px, 0) scale(1.5);
     }
     #menu-game {
-        transform: translate(100px, 110px) scale(1.2);
+        transform: translate(100px, 110px) scale(1.5);
     }
     #menu-dashboard {
-        transform: translate(0, 130px) scale(1.2);
+        transform: translate(0, 130px) scale(1.5);
     }
     #menu-directory {
-        transform: translate(-100px, 110px) scale(1.2);
+        transform: translate(-100px, 110px) scale(1.5);
     }
     #menu-linkedin {
-        transform: translate(-130px, 0) scale(1.2);
+        transform: translate(-130px, 0) scale(1.5);
     }
     #menu-contact {
-        transform: translate(-100px, -110px) scale(1.2);
+        transform: translate(-100px, -110px) scale(1.5);
     }
 }
 
@@ -73,7 +73,7 @@ body {
     top: 48%;
     right: 45%;
     transition: all .5s;
-    & svg:hover {
+    & img:hover {
         transform: scale(1.2);
     }
 }
@@ -196,6 +196,9 @@ footer {
     .folder-icon,
     .pop-icon {
         position: static;
+    }
+    .pop-icon {
+        width: 40px;
     }
     .main-overlay {
         display: none;

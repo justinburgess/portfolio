@@ -465,7 +465,7 @@ body footer {
     display: block;
   }
   #menu #icons {
-    gap: 5px 20px;
+    gap: 5px 5px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "news style gallery" "game dashboard directory";
   }
@@ -513,28 +513,28 @@ body {
   opacity: 1;
 }
 #menu:hover #menu-news {
-  transform: translate(0, -140px) scale(1.2);
+  transform: translate(0, -140px) scale(1.5);
 }
 #menu:hover #menu-style {
-  transform: translate(100px, -110px) scale(1.2);
+  transform: translate(100px, -110px) scale(1.5);
 }
 #menu:hover #menu-gallery {
-  transform: translate(130px, 0) scale(1.2);
+  transform: translate(130px, 0) scale(1.5);
 }
 #menu:hover #menu-game {
-  transform: translate(100px, 110px) scale(1.2);
+  transform: translate(100px, 110px) scale(1.5);
 }
 #menu:hover #menu-dashboard {
-  transform: translate(0, 130px) scale(1.2);
+  transform: translate(0, 130px) scale(1.5);
 }
 #menu:hover #menu-directory {
-  transform: translate(-100px, 110px) scale(1.2);
+  transform: translate(-100px, 110px) scale(1.5);
 }
 #menu:hover #menu-linkedin {
-  transform: translate(-130px, 0) scale(1.2);
+  transform: translate(-130px, 0) scale(1.5);
 }
 #menu:hover #menu-contact {
-  transform: translate(-100px, -110px) scale(1.2);
+  transform: translate(-100px, -110px) scale(1.5);
 }
 
 .pop-icon {
@@ -545,7 +545,7 @@ body {
   right: 45%;
   transition: all 0.5s;
 }
-.pop-icon svg:hover {
+.pop-icon img:hover {
   transform: scale(1.2);
 }
 
@@ -669,6 +669,10 @@ footer {
     position: static;
   }
 
+  .pop-icon {
+    width: 40px;
+  }
+
   .main-overlay {
     display: none;
   }
@@ -740,13 +744,13 @@ footer {
   background-color: #FFECD1;
   box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.631372549);
 }
+.folder img,
+.folder-front img {
+  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.631372549);
+}
 
 .frame {
   background-color: white;
-}
-
-img {
-  box-shadow: -7px -3px 8px 2px rgba(120, 41, 15, 0.631372549);
 }
 
 #tab-news {
@@ -801,7 +805,7 @@ img {
   }
 
   .main-wrap {
-    background: center/cover no-repeat url("../img/brick-background.jpg") #FF7D00;
+    background: center/cover no-repeat url("../img/brick-background.jpg") #ffbe80;
     background-blend-mode: soft-light;
   }
 }
