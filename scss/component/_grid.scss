@@ -129,13 +129,6 @@ body {
         align-items: center;
     }
 
-    #header {
-        display: grid;
-        grid-area: header;
-        grid-template-columns: 1fr;
-        justify-content: center;
-        text-align: center;
-    }
     #menu {
         display: block;
         #icons {
