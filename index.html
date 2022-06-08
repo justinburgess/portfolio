@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Capstone Portfolio</title>
 </head>
-<body>
+<body id="body">
     <header id="header" class="primary-dark">
       <div id="header-wrap" class="border-wrap">
         <h1 id="heading">Web Portfolio</h1>
@@ -41,13 +41,15 @@
               <img id="menu-image-style" src="img/style.svg" alt="style icon">
             </li>
             <li id="menu-responsive" class="pop-icon">
-              <img id="menu-image-resonsive" src="img/border.svg" alt="responsive website icon">
+              <img id="menu-image-responsive" src="img/border.svg" alt="responsive website icon">
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
+
+      <!-- mobile screen overlay -->
       <div id="overlay" class="main-overlay">
         <a id="github-overlay" href="https://github.com/justinburgess" target="_blank">
           <svg fill='#001524' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -61,81 +63,10 @@
           <img src="img/contact-overlay.svg" alt="email icon">
         </a>
       </div>
-      <div class="main-wrap">
-        <div id="project-news" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-news" class="folder-tab">Newsletter</h2>
-          <div class="frame">
-            <img class="project" src="img/newsletter-signup.png" alt="news signup site">
-            <h3>Project: Newsletter Signup</h3>
-            <p>In this project, I learned to leverage forms to capture form data, set requirements for form input, and transition css effects when fields are focused.</p>
-          </div>
-        </div>
-        <div id="project-style" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-style" class="folder-tab">Style Guide</h2>
-          <div class="frame">
-            <img class="project" src="img/web-style-guide.png" alt="web style guide site">
-            <h3>Project: Web Style Guide</h3>
-            <p>In this project, I learned to use SCSS for streamlining and standardizing css source code.</p>
-          </div>
-        </div>
-        <div id="project-gallery" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-gallery" class="folder-tab">Photo Gallery</h2>
-          <div class="frame">
-            <img class="project" src="img/interactive-photo-gallery.png" alt="photo gallery site">
-            <h3>Project: Photo Gallery</h3>
-            <p>In this project, I learned to use CSS grid to create a dynamic, responsive layout, and to use Javascript for lightbox gallery view and search functionality.</p>
-          </div>
-        </div>
-        <div id="project-game" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-game" class="folder-tab">Game Show App</h2>
-          <div class="frame">
-            <img class="project" src="img/game-show-app.png" alt="game show site">
-            <h3>Project: Game Show App</h3>
-            <p>In this project, I learned to use javascript to track scores, interact with DOM elements to display user choices and display messages depending on win or lose status.</p>
-          </div>
-        </div>
-        <div id="project-dashboard" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-dashboard" class="folder-tab">Web App Dashboard</h2>
-          <div class="frame">
-            <img class="project" src="img/web-app-dashboard.png" alt="web app dashboard site">
-            <h3>Project: Web App Dashboard</h3>
-            <p>In this project, I learned to use SCSS for streamlining and standardizing css source code.</p>
-          </div>
-        </div>
-        <div id="project-directory" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-directory" class="folder-tab">Employee Directory</h2>
-          <div class="frame">
-            <img class="project" src="img/employee-directory.png" alt="employee directory search site">
-            <h3>Project: Employee Directory</h3>
-            <p>In this project, I learned to use SCSS for streamlining and standardizing css source code.</p>
-          </div>
-        </div>
-        <div id="project-responsive" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-responsive" class="folder-tab">Mobile First Layout</h2>
-          <div class="frame">
-            <img class="project" src="img/responsive-layout.png" alt="mobile 1st responsive layout site">
-            <h3>Project: Mobile 1st Responsive Layout</h3>
-            <p>In this project, I learned to use SCSS for streamlining and standardizing css source code.</p>
-          </div>
-        </div>
-        <div id="project-folders" class="folder">
-          <div class="folder-front"></div>
-          <h2 id="tab-folders" class="folder-tab">Folders</h2>
-          <div class="frame">
-            <img class="project" src="img/folder-open.svg" alt="open folders site">
-            <h3>Project: Open Folders</h3>
-            <p>In this project, I learned to use SCSS for streamlining and standardizing css source code.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+      <!-- projects created dynamically from app.js -->
+      <div id="main-wrap" class="main-wrap"></div>
+
     </main>
     <footer>
       <a id="linkedin" class="footer-icon" href="https://www.linkedin.com/in/justin-michael-burgess/" target="_blank">

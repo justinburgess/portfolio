@@ -38,7 +38,7 @@ body {
 }
 
 .main-wrap {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     gap: 50px;
 }
@@ -126,7 +126,7 @@ body {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-areas: 'heading folder' 'icons' ;
-        place-content: center;
+        align-items: center;
     }
 
     #header {

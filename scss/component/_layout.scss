@@ -10,6 +10,7 @@ body {
 
 body {
     height: 100vh;
+    transition: all .5s ease-in-out;
 }
 
 #header {
@@ -97,8 +98,9 @@ main {
 }
 
 .main-wrap {
-    display: none;
     padding: 3rem;
+    height: 100%;
+    width: 100%;
 }
 
 .folder-front {
@@ -126,14 +128,15 @@ main {
 }
 
 .folder {
+    display: none;
     position: relative;
     margin: 1rem auto;
     padding: 1rem;
-    max-width: 400px;
     border: 1px solid $primaryDarkPop;
     border-radius: 3% 2% 0% 2% / 2% 2% 79% 40%;
     text-align: center;
     transform: rotateY(2deg);
+    z-index: 0;
     &:hover {
         .folder-front {
             transform: rotateX(95deg) skewX(-25deg);
@@ -149,7 +152,7 @@ main {
 
 img {
     width: 80%;
-    max-width: 350px;
+    max-width: 130px;
 }
 
 p {
@@ -201,6 +204,12 @@ footer {
     .main-overlay {
         display: none;
     }
+    .folder {
+        display: block;
+        img {
+            max-width: 200px;
+        }
+    }
     .main-wrap,
     #header,
     #header-wrap {
@@ -248,5 +257,8 @@ footer {
         gap: 6px;
         top: 80px;
         left: 22px;
+    }
+    img {
+        max-width: 350px;
     }
 }

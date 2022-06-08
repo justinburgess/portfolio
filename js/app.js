@@ -1,23 +1,16 @@
-const newsElement = document.getElementById('project-news');
-const styleElement = document.getElementById('project-style');
-const galleryElement = document.getElementById('project-gallery');
-const gameElement = document.getElementById('project-game');
-const dashboardElement = document.getElementById('project-dashboard');
-const directoryElement = document.getElementById('project-directory');
-const responsiveElement = document.getElementById('project-responsive');
-const foldersElement = document.getElementById('project-folders')
-const menuElement = document.getElementById('menu')
-const overlay = document.getElementById('overlay')
+const overlay = document.getElementById('overlay');
+const mainWrap = document.getElementById('main-wrap');
+
 
 const menuIconMap = {
-    'menu-image-news': newsElement,
-    'menu-image-style': styleElement,
-    'menu-image-gallery': galleryElement,
-    'menu-image-game': gameElement,
-    'menu-image-dashboard': dashboardElement,
-    'menu-image-directory': directoryElement,
-    'menu-image-responsive': responsiveElement,
-    'menu-image-folders': foldersElement,
+    'menu-image-news' : 'project-news',
+    'menu-image-style' : 'project-style',
+    'menu-image-gallery' : 'project-gallery',
+    'menu-image-game' : 'project-game',
+    'menu-image-dashboard' : 'project-dashboard',
+    'menu-image-directory' : 'project-directory',
+    'menu-image-responsive' : 'project-responsive',
+    'menu-image-folders' : 'project-folders'
 }
 
 const projects = [
@@ -28,7 +21,7 @@ const projects = [
         imageSrc : 'img/newsletter-signup.png',
         altText : 'news signup site',
         title : 'Project: Newsletter Signup',
-        text : 'In this project, I learned to leverage forms to capture form data, set requirements for form input, and transition css effects when fields are focused.',
+        description : 'In this project, I learned to leverage forms to capture form data, set requirements for form input, and transition css effects when fields are focused.',
     },
     {
         projectId : 'project-style',
@@ -37,7 +30,7 @@ const projects = [
         imageSrc : 'img/web-style-guide.png',
         altText : 'web style guide site',
         title : 'Project: Web Style Guide',
-        text : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.'
+        description : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.'
     },
     {
         projectId : 'project-gallery',
@@ -46,7 +39,7 @@ const projects = [
         imageSrc : 'img/interactive-photo-gallery.png',
         altText : 'photo gallery site',
         title : 'Project: Photo Gallery',
-        text : 'In this project, I learned to use CSS grid to create a dynamic, responsive layout, and to use Javascript for lightbox gallery view and search functionality.'  
+        description : 'In this project, I learned to use CSS grid to create a dynamic, responsive layout, and to use Javascript for lightbox gallery view and search functionality.'  
     },
     {
         projectId : 'project-game',
@@ -55,7 +48,7 @@ const projects = [
         imageSrc : 'img/game-show-app.png',
         altText : 'game show site',
         title : 'Project: Game Show App',
-        text : 'In this project, I learned to use javascript to track scores, interact with DOM elements to display user choices and display messages depending on win or lose status.'
+        description : 'In this project, I learned to use javascript to track scores, interact with DOM elements to display user choices and display messages depending on win or lose status.'
     },
     {
         projectId : 'project-dashboard',
@@ -64,7 +57,7 @@ const projects = [
         imageSrc : 'img/web-app-dashboard.png',
         altText : 'web app dashboard site',
         title : 'Project: Web App Dashboard',
-        text : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.',
+        description : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.',
     },
     {
         projectId : 'project-directory',
@@ -73,7 +66,7 @@ const projects = [
         imageSrc : 'img/employee-directory.png',
         altText : 'employee directory search site',
         title : 'Project: Employee Directory',
-        text : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.',
+        description : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.',
     },
     {
         projectId : 'project-responsive',
@@ -82,7 +75,7 @@ const projects = [
         imageSrc : 'img/responsive-layout.png',
         altText : 'employee directory search site',
         title : 'Project: Mobile 1st Responsive Layout',
-        text : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.',
+        description : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.',
     },
     {
         projectId : 'project-folders',
@@ -91,16 +84,57 @@ const projects = [
         imageSrc : 'img/folder-open.svg',
         altText : 'open folders site',
         title : 'Project: Open Folders',
-        text : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.'
+        description : 'In this project, I learned to use SCSS for streamlining and standardizing css source code.'
     }
 ]
 
-menu.addEventListener('click', (e) => {
-    const targetID = e.target.id;
-    const projectFolder = menuIconMap[targetID];
-    const children = overlay.children;
-    for (child of children) {
-        child.style.display = 'none'
+projects.forEach(project => {
+    mainWrap.insertAdjacentHTML('afterbegin', `
+    <div id="${project.projectId}" class="folder">
+        <div class="folder-front"></div>
+        <h2 id="${project.tabId}" class="folder-tab">${project.tabText}</h2>
+        <div class="frame">
+        <img class="project" src="${project.imageSrc}" alt="${project.altText}">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        </div>
+    </div>
+    `)
+});
+
+function setOverlay(boolean) {
+    if(boolean){
+        overlay.style.display = 'grid';
+        mainWrap.style.display = 'none';
+    } else {
+        overlay.style.display = 'none';
+        mainWrap.style.display = 'grid';
     }
-    console.log(projectFolder.childNodes[0]);
+}
+
+// displays selected project folder in mobile view
+menu.addEventListener('click', (e) => {
+    const targetId = e.target.id;
+    if (menuIconMap[targetId]) {
+        const projectFolder = document.getElementById(menuIconMap[targetId]);
+        setOverlay(false);
+        Array.from(mainWrap.children).map(child => child.style.display = 'none')
+        projectFolder.style.display = 'block';
+    } 
+    else {
+        setOverlay(true);
+    }
 }); 
+
+// formats window on resize
+window.addEventListener('resize', (e) => {
+    const screenWidth = e.currentTarget.screen.width;
+    if (screenWidth >= 768) {
+        overlay.style.display = 'none';
+        Array.from(mainWrap.children).map(child => child.style.display = 'block');
+    }
+    if (screenWidth < 768) {
+        overlay.style.display = 'grid';
+        Array.from(mainWrap.children).map(child => child.style.display = 'none');
+    }
+})
