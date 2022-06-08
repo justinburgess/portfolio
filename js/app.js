@@ -121,7 +121,7 @@ menu.addEventListener('click', (e) => {
         Array.from(mainWrap.children).map(child => child.style.display = 'none')
         projectFolder.style.display = 'block';
     } 
-    else {
+    else if(window.innerWidth < 768) {
         setOverlay(true);
     }
 }); 
