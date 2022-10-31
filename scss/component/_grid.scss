@@ -37,12 +37,6 @@ body {
     }
 }
 
-.main-wrap {
-    // display: none;
-    // grid-template-columns: 1fr;
-    // gap: 50px;
-}
-
 @media (min-width: 768px){
 
     body {
@@ -108,11 +102,6 @@ body {
     .pop-icon {
         place-self: center;
     }
-
-    // .main-wrap {
-    //     display: grid !important;
-    //     grid-template-columns: repeat(2, minmax(320px, 1fr));
-    // }
 
     footer {
         display: grid !important; 
