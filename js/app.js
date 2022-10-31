@@ -98,6 +98,7 @@ const projects = [
 
 projects.forEach(project => {
     mainWrap.insertAdjacentHTML('afterbegin', `
+    <!-- project ${project.tabText} -->
     <div id="${project.projectId}" class="folder">
         <div class="folder-front"></div>
         <h2 id="${project.tabId}" class="folder-tab">${project.tabText}</h2>
