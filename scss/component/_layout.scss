@@ -130,7 +130,8 @@ main {
 .folder {
     display: none;
     position: relative;
-    margin: 1rem auto;
+    max-width: 425px;
+    margin: 2rem auto;
     padding: 1rem;
     border: 1px solid $primaryDarkPop;
     border-radius: 3% 2% 0% 2% / 2% 2% 79% 40%;
